@@ -4,7 +4,8 @@
 # What does it do?
     git-overseer is a nodeJS app that makes controlling several repos with GitHub's REST API easy.
 
-    The idea is to write your instructions in .ts files and reuse them as presets in other situations. Instead of having to adjust them manually every time.
+    The idea is to write your instructions in .ts files and reuse them as presets in other situations.
+    Instead of having to adjust them manually every time.
 
 # How do I use it?
     1. Enter your credentials in the .env file
