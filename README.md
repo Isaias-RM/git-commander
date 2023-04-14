@@ -9,10 +9,10 @@
 
 # How do I use it?
     1. Enter your credentials in the .env file
-    1. Create a header to tell GitHub who you are and which repo and branch you are adjusting
-    1. Create your API call using our templates in API.d.ts
-    1. In the main.ts file, within the main() function, assemble a header and API call
-    2. 
+    2. Create a header to tell GitHub who you are and which repo and branch you are adjusting
+    3. Create your API call using our templates in ./models/protected-branches/templates.ts
+    4. In the main.ts file, within the main() function, assemble a header and API call 
+    5. In the terminal enter "npm run main"
 
 # Available commands
     getBranchProtection
