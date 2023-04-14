@@ -1,6 +1,4 @@
 export const templates = {
-
-  //https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection
   updateBranchProtection:{
       required_status_checks: {
         strict: true,
@@ -53,8 +51,7 @@ export const templates = {
         'X-GitHub-Api-Version': '2022-11-28'
       },
   },
-
-  //https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection
+  
   updatePullRequestReviewProtection:{
       dismissal_restrictions: {
         users: [
