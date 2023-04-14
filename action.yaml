@@ -1,0 +1,10 @@
+name: "The-Architect"
+description: "nou"
+inputs:
+  GITHUB_TOKEN:
+    description: "This is set automatically"
+    required: true
+
+runs:
+  using: "node16"
+  main: "./jobs/build/main.js"

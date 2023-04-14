@@ -1,0 +1,21 @@
+ownership.yaml:
+  - name:
+    description:
+    kind:
+    maintainer:
+    exec_sponsor:
+    team:
+    repo:
+    qos:
+    tier: 2
+    dependencies:
+      -
+    sev1:
+      pagerduty:
+      tta:
+    sev2:
+      issue:
+      tta:
+    sev3:
+      slack:
+      tta:

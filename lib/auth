@@ -1,0 +1,39 @@
+import { Octokit } from "@octokit/core";
+// require('dotenv').config()
+/// <reference path="./models/BranchSettings.d.ts"/>
+import * as OctokitTypes from "@octokit/types";
+import { createAppAuth, createOAuthUserAuth } from "@octokit/auth-app";
+// import { request } from "@octokit/request";
+import config from "../config/appConfig";
+import * as BranchSettings from "../models/API";
+
+
+export class appAuth {
+    auth: Object;
+    octokit: Octokit;
+    appAuth(){
+        constructor(auth: Object, octokit: Octokit) {
+
+            this.octokit = new Octokit({
+                authStrategy: createAppAuth,
+                auth: {
+                appId: process.env.APP_ID,
+                privateKey: process.env.PRIVATE_KEY,
+                installationId: process.env.INSTALLATION_ID,
+                },
+            });
+    
+            this.auth = createAppAuth({
+                appId: config.APP_ID,
+                privateKey: config.PRIVATE_KEY,
+                clientId: config.CLIENT_ID,
+                clientSecret: config.CLIENT_SECRET,
+                installationId: config.INSTALLATION_ID,
+            });
+            
+    
+            return (this.auth, this.octokit)
+        }
+    }
+
+}  

@@ -1,0 +1,23 @@
+ownership.yaml:
+  - name: {name}
+    description: {description}
+    kind: {kind}
+    maintainer: {maintainer}
+    exec_sponsor: {exec_sponsor}
+    team: github/{team}
+    repo: https://github.com/dinnermonster/{repo}
+    qos: best_effort
+    tier: 2
+    dependencies:
+      - slack
+      - okta
+      - entitlements
+    sev1:
+      pagerduty: test
+      tta: 1 business day
+    sev2:
+      issue: https://github.com/{author}/test
+      tta: 2 business day
+    sev3:
+      slack: dumpster-fire
+        tta: 2 business day

@@ -1,0 +1,33 @@
+repo-generate:
+  name: test
+  org: dinnermonster
+  description: ""
+
+
+branch_protection_rules:
+  secure_default: true
+
+file-generate:
+  ownership.yaml:
+    - name: test
+      description: test
+      kind: test
+      maintainer: dinnermonster
+      exec_sponsor: dinnermonster
+      team: github/it-operations
+      repo: https://github.com/dinnermonster/test
+      qos: best_effort
+      tier: 2
+      dependencies:
+        - slack
+        - okta
+        - entitlements
+      sev1:
+        pagerduty: test
+        tta: 1 business day
+      sev2:
+        issue: https://github.com/dinnermonster/test
+        tta: 2 business day
+      sev3:
+        slack: dumpster-fire
+        tta: 2 business day
