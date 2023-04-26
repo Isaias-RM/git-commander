@@ -37,7 +37,7 @@ export class gitCommander {
     });
   }
 
-  public async getBranchProtection(branch: any): Promise<OctokitTypes.OctokitResponse<object, any> | undefined> {
+  public async getBranchProtection(branch: API.Header): Promise<OctokitTypes.OctokitResponse<object, any> | undefined> {
     try {
       const response = await this.octokit.request(
         "GET /repos/{owner}/{repo}/branches/{branch}/protection",
