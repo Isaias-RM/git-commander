@@ -1,7 +1,7 @@
 export const myRules = {
   customRules:{
     required_status_checks: {
-      strict: true,
+      strict: false,
       contexts: [
         'continuous-integration/travis-ci'
       ]
@@ -19,7 +19,7 @@ export const myRules = {
     allow_deletions: true,
     block_creations: true,
     required_conversation_resolution: true,
-    lock_branch: true,
+    lock_branch: false,
     allow_fork_syncing: true
   },
 
