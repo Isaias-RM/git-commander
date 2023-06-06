@@ -1,13 +1,14 @@
 on:
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    types:
+      - closed
     
 env:
   NODE_VERSION: '16.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
 
 jobs:
-  approved:
-    if: github.event.review.state == 'approved'
+  if_merged:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout GitHub Action'
