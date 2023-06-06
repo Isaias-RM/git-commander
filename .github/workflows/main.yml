@@ -11,21 +11,11 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3.5.2
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.5.2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          
-      - name: 'Create env file'
-        run: |
-          echo "${{ secrets.ENV_FILE }}" > .env
-  
-
-      - name: 'Resolve Project Dependencies Using Npm'
-        shell: bash
-        run: |
-          npm install
-          npm run main --if-present
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: ${{ NODE_VERSION }}
+            cache: 'npm'
+            cache-dependency-path: subdir/package-lock.json
+        - run: npm i
+        - run: npm main
