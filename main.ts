@@ -10,7 +10,7 @@ async function main() {
   try {
     await app.getBranchProtection(branch.test)
     await app.updateBranchProtection(branch.test, myRules.customRules)
-    await app.updatePullRequestReviewProtection(branch.test, myRules.updatePullRequestReviewProtection)
+    //await app.updatePullRequestReviewProtection(branch.test, myRules.updatePullRequestReviewProtection)
   } catch (err) {
     console.log(err);
   }
